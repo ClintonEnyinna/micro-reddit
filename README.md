@@ -1,4 +1,4 @@
-micro-reddit
+Micro-Reddit
 ==============
 
 Reddit backend clone ( no front end )
