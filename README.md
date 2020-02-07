@@ -1,52 +1,48 @@
-Slackbot
+micro-reddit
 ==============
 
-Microverse Capstone Project consisting on a bot deveolped to interact with Slack users on a given Workspace. Build yours!
+Reddit backend clone ( no front end )
 
 ## What it does?
-It allows you to make a quick search by asking your bot without leaving Slack. Some example questions may be:
-
-![Example question 1](img/question_1.gif)
-
-![Example question 2](img/question_2.gif)
-
-But if you try something he may not know:
-![Example question 3](img/question_3.gif)
+This is a 'micro' version of the popular social-network Reddit MODEL structure. From here you should be able to build your social-network database and work on basic functions like creating new posts, sign-up for new users and type comments on users post.
 
 ## How it works?
 The Bot is working  on top of the following resources:
 
-- [Slack-Ruby-Bot](https://github.com/slack-ruby/slack-ruby-bot#slack-ruby-bot)
-- [Slack API](http://api.slack.com)
-- [Wolfram API](https://account.wolfram.com/auth/sign-in)
+- Ruby (version 2.6.5)
+- Rails (version 5.2.4)
 
-And powered by:
+And the next dependencies:
 
-- Ruby
-- Slack
-- YML
+- sqlite3
+- puma
+- sass-rails
+- uglifier
+- coffee-rails
+- turbolinks
+- jbuilder
+- bootsnap
 
 ## Usage
 ### Step 1: Clone and install dependencies
 Clone the repo and run `bundle install` to get all the gems on your terminal.
-### Step 2: Get your tokens for Slack & Wolfram APIs
-You will have to register on [WolframID](http://account.wolfram.com/wolframid) and [Slack Bot Integration](http://slack.com/services/new/bot) to get your access tokens (for a register tutorial on Slack and Wolfram click [here](TUTORIAL.md)). Once that done just paste on your `.env` file. 
-### Step 3: Add your bot to a channel and run
-You're almost done with code part. Now just execute with `rackup` and have fun! Above are some examples, but feel free to see description of each command with '@your_bot's_name are you there?' or '@your_bot's_name help'
+### Step 2: Run database migration
+From terminal type `rails db:migrate` to get your schema updated
+### Step 3: Work on IRB
+That's it on configuration. Now you can just open IRB and begin to work on the model typing `rails console` and run some of the below commands to generate data for your social database:
 
-![Command description 1](img/question.gif)
+- `User.create(username:"your_user_name", email:"your_email@mail.com")` for creating a new user
+- `Post.create(user_id:any_integer_without_quotations, body:"the post's body text")` *Consider making a user first (for id)
+- `Comment.create(user_id:any_integer_without_quotations, post_id:any_integer_without_quotations, body:"the post's body text")` *Consider making a post first (for id)
+- `User.first.comments` to get the comments from the very first user 
 
-![Command description 2](img/help_are_you_there.gif)
-
-![Command description 3](img/help_could_you_please.gif)
-
-Also feel free to play with the code for some commands, like changing responses or adding them on `bot.rb`
+Feel free to play with the db adding more users, comments or post and being able to make any kind of query related to those three models
 
 ## 🤝 Contributing
 
-Contributions are more than welcome!<br/>Feel free to check [issues page](http://github.com/ricardovaltierra/slackbot/issues/).
+Contributions are more than welcome!<br/>Feel free to check [issues page](https://github.com/ClintonEnyinna/micro-reddit/issues/).
 
-1. Fork (https://github.com/ricardovaltierra/slackbot/development/fork)
+1. Fork (https://github.com/ClintonEnyinna/micro-reddit/development/fork)
 2. Create your working branch (git checkout -b [branch_name])
 3. Commit your changes (git commit -am 'what you will add or fix or improve')
 4. Push (git push origin [branch_name])
@@ -54,9 +50,8 @@ Contributions are more than welcome!<br/>Feel free to check [issues page](http:/
 
 ## 🤖 Contributor
 
-ricardo valtierra - [GitHub](https://github.com/ricardovaltierra)
-
-
+Clinton Enyinna - [GitHub](https://github.com/ClintonEnyinna) 
+Ricardo Valtierra - [GitHub](https://github.com/ricardovaltierra)
 
 ## 🙋‍♂ Support :)
 
